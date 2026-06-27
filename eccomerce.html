@@ -1,0 +1,131 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>BRUTAL.STORE</title>
+    <link rel="stylesheet" href="style.css">
+    <link href="https://fonts.googleapis.com/css2?family=Space+Grotesk:wght@500;700;900&display=swap" rel="stylesheet">
+</head>
+<body>
+
+    <!-- AUTHENTICATION VIEW -->
+    <div id="auth-view" class="view-section active">
+        <div class="auth-container">
+            <div class="auth-box">
+                <h2 id="auth-title">ENTER THE VOID.</h2>
+                <div class="auth-tabs">
+                    <button id="tab-login" class="tab-btn active">LOGIN</button>
+                    <button id="tab-signup" class="tab-btn">SIGN UP</button>
+                </div>
+                <div id="auth-error" class="auth-error"></div>
+                <form id="auth-form">
+                    <input type="text" id="username" placeholder="USERNAME" required>
+                    <input type="email" id="email" placeholder="EMAIL ADDRESS" style="display: none;">
+                    <input type="password" id="password" placeholder="PASSWORD" required>
+                    <button type="submit" class="auth-submit" id="auth-submit-btn">LOGIN</button>
+                </form>
+            </div>
+        </div>
+    </div>
+
+    <!-- MAIN STORE VIEW -->
+    <div id="store-view" class="view-section" style="display: none;">
+        <nav class="navbar">
+            <div class="logo">BRUTAL.STORE</div>
+            <div class="nav-actions">
+                <div class="profile-wrapper">
+                    <button class="icon-btn" id="toggle-profile">👤</button>
+                    <div class="profile-dropdown" id="profile-dropdown">
+                        <div class="profile-header">HI, <span id="user-name-display">GUEST</span></div>
+                        <ul class="profile-menu">
+                            <li><button class="menu-item" id="btn-orders">📦 MY ORDERS</button></li>
+                            <li><button class="menu-item" id="btn-wishlist">❤️ WISHLIST</button></li>
+                            <li><button class="menu-item" id="btn-settings">⚙️ SETTINGS</button></li>
+                            <li><button class="menu-item logout" id="logout-btn">🚪 LOGOUT</button></li>
+                        </ul>
+                    </div>
+                </div>
+                <button class="cart-btn" id="toggle-cart">CART (<span id="cart-count">0</span>)</button>
+            </div>
+        </nav>
+
+        <!-- TOP SLIDER -->
+        <div class="marquee-slider">
+            <div class="marquee-track" id="slider-track">
+                <!-- Featured text/products injected via JS -->
+            </div>
+        </div>
+
+        <header class="hero">
+            <h1>UNAPOLOGETIC FASHION.</h1>
+            <p>No soft edges. No subtle gradients. Just raw style.</p>
+        </header>
+
+        <main class="container">
+            <!-- FILTERS -->
+            <div class="filters-container">
+                <div class="filter-group" id="gender-filters">
+                    <button class="filter-btn active" data-filter="all">ALL</button>
+                    <button class="filter-btn" data-filter="mens">MENS</button>
+                    <button class="filter-btn" data-filter="womens">WOMENS</button>
+                </div>
+                <div class="filter-group" id="category-filters">
+                    <button class="filter-btn active" data-filter="all">ALL</button>
+                    <button class="filter-btn" data-filter="t-shirt">T-SHIRTS</button>
+                    <button class="filter-btn" data-filter="half-pants">HALF PANTS</button>
+                    <button class="filter-btn" data-filter="full-pants">FULL PANTS</button>
+                    <button class="filter-btn" data-filter="jeans">JEANS</button>
+                    <button class="filter-btn" data-filter="trousers">TROUSERS</button>
+                    <button class="filter-btn" data-filter="undergarments">UNDERGARMENTS</button>
+                </div>
+            </div>
+
+            <div class="product-grid" id="product-grid">
+                <!-- Products dynamically inserted here (optimized) -->
+            </div>
+        </main>
+
+        <footer class="footer">
+            <div class="footer-content">
+                <h2>BRUTAL.STORE</h2>
+                <p>Destroying fast fashion norms since 2026.</p>
+            </div>
+            <div class="footer-links">
+                <a href="#" id="link-terms">TERMS</a>
+                <a href="#" id="link-privacy">PRIVACY</a>
+                <a href="#" id="link-return">RETURN POLICY</a>
+            </div>
+        </footer>
+    </div>
+
+    <!-- CART SIDEBAR -->
+    <div class="cart-sidebar" id="cart-sidebar">
+        <div class="cart-header">
+            <h2>YOUR CART</h2>
+            <button class="close-cart" id="close-cart">X</button>
+        </div>
+        <div class="cart-items" id="cart-items"></div>
+        <div class="cart-footer">
+            <h3>TOTAL: $<span id="cart-total">0.00</span></h3>
+            <button class="checkout-btn" id="btn-checkout">CHECKOUT</button>
+        </div>
+    </div>
+
+    <!-- FEATURE MODAL -->
+    <div class="feature-modal" id="feature-modal">
+        <div class="modal-header">
+            <h2 id="modal-title">TITLE</h2>
+            <button class="close-modal" id="close-modal">X</button>
+        </div>
+        <div class="modal-body" id="modal-body">
+            <!-- Content injected here via JS -->
+        </div>
+    </div>
+
+    <!-- OVERLAY -->
+    <div class="overlay" id="overlay"></div>
+
+    <script src="main.js"></script>
+</body>
+</html>
